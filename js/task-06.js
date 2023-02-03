@@ -1,15 +1,16 @@
 const inputRef = document.querySelector('#validation-input');
 
 const inputRefBlurHandeler = (event) => {
-    const element =  event.currentTarget;
-    const sizeLimitValue = element.dataset.length;
-    const sizeValue = element.value.length;
-    const elementClassList = element.classList;
+    const {
+        dataset:{length: sizeLimitValue,}, 
+        value:{length:sizeValue,}, 
+        classList,
+    } = event.currentTarget;
 
-    if(elementClassList.contains('invalid')) elementClassList.remove('invalid');
-    if(elementClassList.contains('valid')) elementClassList.remove('valid');
+    if(classList.contains('invalid')) classList.remove('invalid');
+    if(classList.contains('valid')) classList.remove('valid');
 
-    element.classList.add(sizeLimitValue < sizeValue ? 'invalid' : 'valid');
+    classList.add(sizeLimitValue < sizeValue ? 'invalid' : 'valid');
 };
 
 inputRef.addEventListener('blur', inputRefBlurHandeler);
