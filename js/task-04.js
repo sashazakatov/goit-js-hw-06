@@ -5,14 +5,14 @@ const buttonIncrementRef = document.querySelector('#counter > [data-action="incr
 let counterValue = 0;
 
 const editValue = (value) => spanValue.textContent = value;
-const buttonDecrementRefClickHendler = () => {
+const buttonDecrementRefClickHandler = () => {
     counterValue -= 1;
     editValue(counterValue);
 };
-const buttonIncrementRefCliclHendler = () => {
+const buttonIncrementRefCliclHandler = () => {
     counterValue +=1;
     editValue(counterValue);
 }
 
-buttonDecrementRef.addEventListener('click', buttonDecrementRefClickHendler);
-buttonIncrementRef.addEventListener('click', buttonIncrementRefCliclHendler);
+buttonDecrementRef.addEventListener('click', buttonDecrementRefClickHandler);
+buttonIncrementRef.addEventListener('click', buttonIncrementRefCliclHandler);
