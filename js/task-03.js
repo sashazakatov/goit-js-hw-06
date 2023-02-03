@@ -22,5 +22,3 @@ const markup = images
 console.log(markup);
 
 listRef.insertAdjacentHTML('beforebegin', markup)
-
-
