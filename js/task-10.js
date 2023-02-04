@@ -13,7 +13,7 @@ const createBoxes = (amount) =>
 {
   const width = 30;
   const height = 30;
-  const boxes = new Array(parseInt(amount))
+  const boxes = new Array(amount)
   .fill(null)
   .map((element, index) => {
     element = `<div style="background-color:${getRandomHexColor()}; width:${width + index * 10}px; height:${height + index * 10}px;"></div>`;
@@ -24,7 +24,7 @@ const createBoxes = (amount) =>
   refs.box.insertAdjacentHTML('beforeend', boxes);
 };
 
-refs.buttonCreate.addEventListener('click', () => createBoxes(refs.input.value));
+refs.buttonCreate.addEventListener('click', () => createBoxes(parseInt(refs.input.value)));
 refs.buttonDestroy.addEventListener('click', () => {
   refs.box.innerHTML = '';
   refs.input.value = '';
