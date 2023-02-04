@@ -1,6 +1,7 @@
 const fontSizeControlRef = document.querySelector('#font-size-control');
 const textRef = document.querySelector('#text');
 
+// change text size
 const changeSizeText = (elementText, sizeText) => {
     elementText.style.fontSize = `${sizeText}px`;
 };

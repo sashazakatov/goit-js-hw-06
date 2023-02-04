@@ -2,8 +2,7 @@ const inputRef = document.querySelector('#name-input');
 const outputRef = document.querySelector('#name-output');
 
 const inputRefInputHendler = (event) =>{
-    const inputData = event.currentTarget.value;
-    outputRef.textContent = inputData
+    outputRef.textContent = event.currentTarget.value;
     if (inputData === '') outputRef.textContent = 'Anonymous';
 }
 

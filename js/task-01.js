@@ -1,10 +1,12 @@
 const categoriesRef = document.querySelector('#categories');
-const categories = document.querySelectorAll('#categories > li');
+const itemsRef = document.querySelectorAll('#categories > li');
 
-const countOfCategories = categories.length;
+// number of elements in categoriesRef
+const countOfCategories = itemsRef.length;
 console.log("Number of categories:", countOfCategories);
 
-categories.forEach((element) => {
+// display title and number of elements in itemsRef
+itemsRef.forEach((element) => {
     const titleRef = element.querySelector('h2');
     const listRef = element.querySelector('ul');
     console.log('Category:', titleRef.textContent);

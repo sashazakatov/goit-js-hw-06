@@ -16,9 +16,9 @@ const images = [
 
 const listRef = document.querySelector('.gallery');
 
+// 'markup' variable stores markup string
 const markup = images
 .map((element) => `<li><img src="${element.url}" alt="${element.alt}"><li>`)
 .join('');
-console.log(markup);
 
-listRef.insertAdjacentHTML('beforebegin', markup)
+listRef.insertAdjacentHTML('beforebegin', markup);

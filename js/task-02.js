@@ -8,13 +8,13 @@ const ingredients = [
 ];
 
 const ingredientsRef = document.querySelector('#ingredients');
-const ingredientsArryLi = [];
-
-ingredients.forEach(element => {
+ 
+//array to hold elements 'li' 
+const ingredientsArryLi = ingredients.map(element => {
   const newLiRef = document.createElement('li');
   newLiRef.textContent = element;
   newLiRef.classList.add('item');
-  ingredientsArryLi.push(newLiRef);
+  return newLiRef;
 });
 
 ingredientsRef.append(...ingredientsArryLi);
