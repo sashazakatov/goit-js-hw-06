@@ -11,23 +11,19 @@ const refs = {
 
 const createBoxes = (amount) =>
 {
-  const boxes = [];
-  for(let i = 0; i < amount; i++){
-    const box = document.createElement('div');
-    
-    box.style.backgroundColor = getRandomHexColor();
-    console.log(30 + (i * 10));
-    box.style.width = `${30 + (i * 10)}px`;
-    box.style.height = `${30 + (i * 10)}px`;
+  const width = 30;
+  const height = 30;
+  const boxes = new Array(parseInt(amount))
+  .fill(null)
+  .map((element, index) => {
+    element = `<div style="background-color:${getRandomHexColor()}; width:${width + index * 10}px; height:${height + index * 10}px;"></div>`;
+    return element;
+  })
+  .join('');
 
-    boxes.push(box);
-    // console.log(box.style);
-  }
-
-  refs.box.append(...boxes);
-  // console.log(refs.box);
+  refs.box.insertAdjacentHTML('beforeend', boxes);
 };
-// console.dir(refs.input);
+
 refs.buttonCreate.addEventListener('click', () => createBoxes(refs.input.value));
 refs.buttonDestroy.addEventListener('click', () => {
   refs.box.innerHTML = '';
