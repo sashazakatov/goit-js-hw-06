@@ -7,8 +7,9 @@ const formRefSubmitHandler = (event) =>{
         elements: { email, password }
       } = event.currentTarget;
 
-    if(email.value === '' || password.value === '')
+    if(email.value === '' || password.value === ''){
         return alert('all fields must be filled');
+    }
 
     const formObject = {
         [email.name]: email.value,

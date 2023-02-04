@@ -7,10 +7,8 @@ const inputRefBlurHandeler = (event) => {
         classList,
     } = event.currentTarget;
 
-    if(classList.contains('invalid')) classList.remove('invalid');
-    if(classList.contains('valid')) classList.remove('valid');
-
-    classList.add(sizeLimitValue < sizeValue ? 'invalid' : 'valid');
+    classList.remove('invalid', 'valid');
+    classList.add(sizeValue === parseInt(sizeLimitValue) ? 'valid' : 'invalid');
 };
 
 inputRef.addEventListener('blur', inputRefBlurHandeler);
